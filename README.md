@@ -24,6 +24,9 @@ CNAME             Custom domain for GitHub Pages
   id. The theme color is the `--blue` / `--cyan` / `--purple` / `--orange`
   suffix on `scene__outer-circle` and `showcase`.
 - Case studies can be linked directly, e.g. `https://appletreelabs.com/#fiji-water`.
+- **After changing CSS or JS:** bump the `?v=` number on the `<link>` and
+  `<script>` tags in `index.html` (e.g. `?v=2` → `?v=3`) so returning visitors
+  get the new files instead of a cached copy.
 
 ## Local preview
 
