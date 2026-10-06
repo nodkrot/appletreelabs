@@ -123,13 +123,14 @@ body {
   color: inherit;
 }
 .scene__outer-circle {
+  --size: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -250px;
-  margin-left: -250px;
-  width: 500px;
-  height: 500px;
+  margin-top: calc(var(--size) / -2);
+  margin-left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   transition: transform 0.3s ease-out 0.2s;
 }
@@ -152,16 +153,36 @@ body {
 }
 .scene__inner-circle {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -100px;
-  width: 200px;
-  height: 200px;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 calc(var(--size) * 0.04) rgba(255, 255, 255, 0.3);
   transition: transform 0.2s ease-out;
+}
+
+/* Small screens: stack the text above a smaller circle */
+@media screen and (max-width: 767px) {
+  .section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 90px 0 110px;
+  }
+  .scene__title {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .scene__outer-circle {
+    --size: min(64vw, 30vh);
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-shrink: 0;
+    margin: 4vh auto 0;
+  }
 }
 
 /* Showcase (case study modal) */
