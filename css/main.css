@@ -47,6 +47,9 @@ body {
   color: #aaa;
   font-size: 12px;
 }
+.site-footer__contact .site-footer__made {
+  margin-top: 8px;
+}
 
 /* Full-screen sections (one per screen, snap scrolling) */
 .sections {
